@@ -1,0 +1,43 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: php-apache
+spec:
+  selector:
+    matchLabels:
+      run: php-apache
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        run: php-apache
+    spec:
+      containers:
+      - name: php-apache
+        image: k8s.gcr.io/hpa-example
+        ports:
+        - containerPort: 80
+        resources:
+          limits:
+            cpu: 500m
+          requests:
+            cpu: 200m
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: php-apache
+  labels:
+    run: php-apache
+spec:
+  # comment or delete the following line if you 
+  # want to use a LoadBalancer.
+  # Con NodePort viene aperto un tunnel dall'hosti
+  # alla VM minikube per raggiungere la porta 80
+  # NodePort esiste solo in minikube, 
+  # LoadBalancer e' standard per Kubernetes.
+  type: NodePort 
+  ports:
+  - port: 80
+  selector:
+    run: php-apache
