@@ -1,1 +1,1 @@
-{"virtualbox":{"/vagrant":{"guestpath":"/vagrant","hostpath":"/home/drudao/Desktop/University/Anno_III/Semestre_2/Virtualizzazione/Project/Resources/vagrant-kubeadm-kubernetes-main.OK.2023-04-07/vagrant-kubeadm-kubernetes-main","disabled":false,"__vagrantfile":true}}}
+{"virtualbox":{"/vagrant":{"guestpath":"/vagrant","hostpath":"/home/drudao/Desktop/University/Anno_III/Semestre_2/Virtualizzazione/Project/k8s-autoscaling/vagrant-kubeadm-kubernetes","disabled":false,"__vagrantfile":true}}}

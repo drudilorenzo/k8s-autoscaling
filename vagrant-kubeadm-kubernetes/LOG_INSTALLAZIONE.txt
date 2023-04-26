@@ -1781,8 +1781,7 @@ NwBKMYGxcoXQsyjJLjnBWBSaqkdhr62T-BLkY_Re0jZyIdT8vuTje8bFEJY-wuNaQvEFn3hjZPwmRXSr
 jWxChONLV8eUFqcLu_ITzqL7Zb6FPIzQwSfFnD504LDMZGohO7ehjlgR9hdhubN3jR6JdHZq2U-I6xYa_G3zpEhTiJhMEHo
 -xV1J_X90QePdR9fEli7itFHZ0TrI2j9AenRhJwMzDY2P_Yy8ZBmM7Nq9XvjHOuNzeBiuZZFUjHMFtbOaDzXSMQ
     node02: Use it to log in at:
-    node02: http://localhost:8001/api/v1/namespaces/kubernetes-dashboard/services/https:kuberne
-tes-dashboard:/proxy/#/overview?namespace=kubernetes-dashboard
+    node02: http://localhost:8001/api/v1/namespaces/kubernetes-dashboard/services/https:kubernetes-dashboard:/proxy/#/overview?namespace=kubernetes-dashboard
     node02:
     node02: + echo '
     node02: Use it to log in at:
