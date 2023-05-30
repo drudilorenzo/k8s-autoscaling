@@ -11,11 +11,9 @@ kubectl get service apache-service | grep apache-service | ( \
 	PORT=${WITHOUTEND##*:};
 	echo PORT ${PORT};
 
-	LINE=`kubectl describe node master | grep InternalIP:`;
+    IP=`kubectl get service apache-service | awk 'NR==2 {print $3}'`;
 
-    RAW_IP=${LINE##*:};
-	IP="${RAW_IP// /}";
-	echo service at  http://${IP}:${PORT}/
+	echo service at  http://${IP}:80/
  )
 
 else		echo errore ; fi
