@@ -9,12 +9,9 @@ metadata:
   name: kubernetes-dashboard
   namespace: kubernetes-dashboard
 spec:
-  # RIGA AGGIUNTA DA VIC
   type: NodePort
   ports:
     - port: 443
-  #RIGA QUI SOTTO COMMENTATA DA VIC
-  #    targetPort: 8443
   selector:
     k8s-app: kubernetes-dashboard
 
