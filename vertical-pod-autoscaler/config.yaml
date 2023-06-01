@@ -1,6 +1,6 @@
-# This config creates a deployment with two pods, each requesting 100 millicores
-# and trying to utilize slightly above 500 millicores (repeatedly using CPU for
-# 0.5s and sleeping 0.5s).
+# This config creates a deployment with two pods. The pods are configured
+# with a request of 200m CPU and 100Mi memory, and a limit of 600m CPU and
+# 300Mi memory.
 # It also creates a corresponding Vertical Pod Autoscaler that adjusts the
 # requests.
 # Note that the update mode is left unset, so it defaults to "Auto" mode.
@@ -21,9 +21,10 @@ spec:
           cpu: 10m
           memory: 50Mi
         maxAllowed:
-          cpu: 100m
+          cpu: 600m
           memory: 300Mi
         controlledResources: ["cpu", "memory"]
+        
 ---
 apiVersion: v1
 kind: Service
@@ -56,13 +57,13 @@ spec:
     spec:
       containers:
         - name: apache-container
-          image: httpd:2.4
+          image: registry.k8s.io/hpa-example
           resources:
             requests:
-              cpu: "100m"
+              cpu: "200m"
               memory: "100Mi"
             limits:
-              cpu: "200m"
-              memory: "200Mi"
+              cpu: "600m"
+              memory: "300Mi"
           ports:
             - containerPort: 80
