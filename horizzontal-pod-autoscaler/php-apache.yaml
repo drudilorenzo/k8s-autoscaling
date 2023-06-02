@@ -30,13 +30,6 @@ metadata:
   labels:
     run: php-apache
 spec:
-  # comment or delete the following line if you 
-  # want to use a LoadBalancer.
-  # Con NodePort viene aperto un tunnel dall'hosti
-  # alla VM minikube per raggiungere la porta 80
-  # NodePort esiste solo in minikube, 
-  # LoadBalancer e' standard per Kubernetes.
-  type: NodePort 
   ports:
   - port: 80
   selector:
