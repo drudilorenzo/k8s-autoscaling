@@ -1,3 +1,1 @@
-
-kubectl delete -f php-apache-NodePort.yaml  
-
+kubectl delete -f php-apache-NodePort.yaml
