@@ -51,9 +51,12 @@ EOF
 
 kubectl apply -f https://raw.githubusercontent.com/techiescamp/kubeadm-scripts/main/manifests/metrics-server.yaml
 
+# THE LINES BELOW ARE FOR VPA DEMO ONLY, IF YOU PLAN TO USE THE HPA DEMO FEEL FREE TO COMMENT THEM OUT
 # Install VPA
 
 git clone https://github.com/kubernetes/autoscaler.git
 cd autoscaler/vertical-pod-autoscaler
 ./hack/vpa-up.sh
 ./hack/vpa-process-yamls.sh print
+
+# END OF VPA INSTALLATION
