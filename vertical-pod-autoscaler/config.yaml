@@ -1,5 +1,9 @@
-# Note that the update mode is left unset, so it defaults to "Auto" mode.
----
+# This config creates a deployment with two pods. The pods are configured
+# with a request of 200m CPU and 100Mi memory, and a limit of 600m CPU and
+# 300Mi memory.
+# It also creates a corresponding Vertical Pod Autoscaler that adjusts the
+# resources.
+
 apiVersion: "autoscaling.k8s.io/v1"
 kind: VerticalPodAutoscaler
 metadata:
